@@ -1,0 +1,6 @@
+PROG=pp-mycom-server
+NO_MAN=
+CFLAGS+=-I../include
+
+.include <bsd.prog.mk>
+

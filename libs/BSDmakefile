@@ -1,0 +1,6 @@
+LIB=utils
+SRCS=timeutils.c 
+NO_MAN=
+CFLAGS+=-I../include
+
+.include <bsd.lib.mk>

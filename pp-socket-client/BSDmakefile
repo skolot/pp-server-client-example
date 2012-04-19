@@ -1,0 +1,6 @@
+PROG=pp-socket-client
+NO_MAN=
+CFLAGS+=-I../include
+LDADD=../libs/libutils.a
+
+.include <bsd.prog.mk>

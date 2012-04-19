@@ -1,0 +1,31 @@
+diff -Naur linux-source-2.6.32/arch/x86/include/asm/unistd_32.h linux-source-2.6.32my/arch/x86/include/asm/unistd_32.h
+--- linux-source-2.6.32/arch/x86/include/asm/unistd_32.h	2009-12-02 21:51:21.000000000 -0600
++++ linux-source-2.6.32my/arch/x86/include/asm/unistd_32.h	2010-03-05 07:16:37.761286144 -0600
+@@ -342,10 +342,14 @@
+ #define __NR_pwritev		334
+ #define __NR_rt_tgsigqueueinfo	335
+ #define __NR_perf_event_open	336
++#define __NR_mycom_get          337
++#define __NR_mycom_destroy      338
++#define __NR_mycom_send         339
++#define __NR_mycom_recv         340
+ 
+ #ifdef __KERNEL__
+ 
+-#define NR_syscalls 337
++#define NR_syscalls 341
+ 
+ #define __ARCH_WANT_IPC_PARSE_VERSION
+ #define __ARCH_WANT_OLD_READDIR
+diff -Naur linux-source-2.6.32/arch/x86/kernel/syscall_table_32.S linux-source-2.6.32my/arch/x86/kernel/syscall_table_32.S
+--- linux-source-2.6.32/arch/x86/kernel/syscall_table_32.S	2010-02-24 11:31:22.000000000 -0600
++++ linux-source-2.6.32my/arch/x86/kernel/syscall_table_32.S	2010-03-05 08:31:21.101526691 -0600
+@@ -336,3 +336,8 @@
+ 	.long sys_pwritev
+ 	.long sys_rt_tgsigqueueinfo	/* 335 */
+ 	.long sys_perf_event_open
++        .long sys_mycom_get
++        .long sys_mycom_destroy
++        .long sys_mycom_send
++        .long sys_mycom_recv
++

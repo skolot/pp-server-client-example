@@ -1,0 +1,10 @@
+--- linux-source-2.6.32/kernel/Makefile	2009-12-02 21:51:21.000000000 -0600
++++ linux-source-2.6.32my/kernel/Makefile	2010-03-04 09:31:19.304415981 -0600
+@@ -12,6 +12,7 @@
+ 	    notifier.o ksysfs.o pm_qos_params.o sched_clock.o cred.o \
+ 	    async.o
+ obj-y += groups.o
++obj-y += mycom.o
+ 
+ ifdef CONFIG_FUNCTION_TRACER
+ # Do not trace debug files and internal ftrace files

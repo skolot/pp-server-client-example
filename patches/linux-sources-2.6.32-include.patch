@@ -1,0 +1,13 @@
+diff -Naur linux-source-2.6.32/include/linux/syscalls.h linux-source-2.6.32my/include/linux/syscalls.h
+--- linux-source-2.6.32/include/linux/syscalls.h	2010-02-24 11:31:22.000000000 -0600
++++ linux-source-2.6.32my/include/linux/syscalls.h	2010-03-05 07:17:54.639835928 -0600
+@@ -883,4 +883,9 @@
+ asmlinkage long sys_mmap_pgoff(unsigned long addr, unsigned long len,
+ 			unsigned long prot, unsigned long flags,
+ 			unsigned long fd, unsigned long pgoff);
++asmlinkage long sys_mycom_get(size_t size);
++asmlinkage long sys_mycom_destroy(int client);
++asmlinkage long sys_mycom_send(int client, int to, const char __user *buf, size_t size);
++asmlinkage long sys_mycom_recv(int client, int from, char __user *buf, size_t size);
++
+ #endif
